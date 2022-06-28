@@ -8,28 +8,51 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 class App extends Component {
   state = {};
+
+  // apikey = process.env.REACT_APP_API_KEY;
+
+  apikey = "ababd676b6fd4689a4e4a275d850403b";
+
   render() {
+    const pageSize = 19;
     return (
       <>
         <BrowserRouter>
           <Navbar />
+
+          <h2>Lec No 30 Done</h2>
           <Routes>
             <Route
               exact
               path="/"
-              element={<News pageSize={6} key="general" category="general" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  key="general"
+                  category="general"
+                />
+              }
             />
             <Route
               exact
               path="/business"
-              element={<News pageSize={6} key="business" category="business" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  key="business"
+                  category="business"
+                />
+              }
             ></Route>
             <Route
               exact
               path="/entertainment"
               element={
                 <News
-                  pageSize={6}
+                  api={this.apikey}
+                  pageSize={this.pageSize}
                   category="entertainment"
                   key="entertainment"
                 />
@@ -38,33 +61,66 @@ class App extends Component {
             <Route
               exact
               path="/sports"
-              element={<News pageSize={6} category="sports" key="sports" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  category="sports"
+                  key="sports"
+                />
+              }
             ></Route>
             <Route
               exact
               path="/health"
-              element={<News pageSize={6} category="health" key="health" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  category="health"
+                  key="health"
+                />
+              }
             ></Route>
             <Route
               exact
               path="/science"
-              element={<News pageSize={6} category="science" key="science" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  category="science"
+                  key="science"
+                />
+              }
             ></Route>
             <Route
               exact
               path="/technology"
               element={
-                <News pageSize={6} category="technology" key="technology" />
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  category="technology"
+                  key="technology"
+                />
               }
             ></Route>
             <Route
               exact
               path="/"
-              element={<News pageSize={6} category="sports" key="sports" />}
+              element={
+                <News
+                  api={this.apikey}
+                  pageSize={this.pageSize}
+                  category="sports"
+                  key="sports"
+                />
+              }
             ></Route>
           </Routes>
         </BrowserRouter>
-        {/* <News pageSize={6} category="sports" /> */}
+        {/* <News api={this.apikey} pageSize={this.pageSize} category="sports" /> */}
       </>
     );
   }
